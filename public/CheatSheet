@@ -1,0 +1,13 @@
+<div className="App">
+    <Greet />
+    <Welcome />
+
+    <VariableProps name="Suman" loves= "Red">
+    <p>This is a chindren prop using function</p>
+    <button>Click here...</button>
+    </VariableProps>
+
+    <VariableClassProps name="Subha" loves= "Green">
+    <p>This is a chindren property using class</p>
+    </VariableClassProps>
+</div>
