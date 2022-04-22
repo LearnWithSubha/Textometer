@@ -27,6 +27,22 @@ function App() {
        setAlert(null)
      }, 1000);
   }
+  const removeBodyClasses=()=>{
+    document.body.classList.remove('bg-light');
+    document.body.classList.remove('bg-dark');
+    document.body.classList.remove('bg-success');
+    document.body.classList.remove('bg-primary');
+    document.body.classList.remove('bg-info');
+    document.body.classList.remove('bg-danger');
+    
+  }
+
+
+  const changeMode=(cls)=>{
+    removeBodyClasses();
+    document.body.classList.add('bg-'+cls);
+    
+  }
 
   const toggolMode=()=>{
     if(mode==='light'){
@@ -49,6 +65,7 @@ function App() {
           title="MyApplication"
           modeBtnTxt={modeBtn}
           toggolMode={toggolMode}
+          changeMode={changeMode}
           mode={mode}
           home="home"
           other="About"
@@ -59,8 +76,8 @@ function App() {
         <div className="container">
           <Routes>
             <Route exact path="/about" element={<About mode={mode} />}/>
-            <Route exact path="/home" element={<TextForm boxhead="Enter the text to analyze below" mode={mode} />}/>
-            <Route exact path="/" element={<TextForm boxhead="Enter the text to analyze below" mode={mode} />}/>
+            <Route exact path="/home" element={<TextForm boxhead="Enter the text to analyze below," mode={mode} />}/>
+            <Route exact path="/" element={<TextForm boxhead="Enter the text to analyze below," mode={mode} />}/>
           </Routes>
         </div>
       </Router>
